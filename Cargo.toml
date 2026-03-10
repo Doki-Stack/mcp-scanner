@@ -1,0 +1,9 @@
+[package]
+name = "mcp-scanner"
+version = "0.1.0"
+edition = "2021"
+description = "Repository Scanner MCP server (Rust) — git cloning, code analysis, LLM summarization"
+license = "Apache-2.0"
+repository = "https://github.com/Doki-Stack/mcp-scanner"
+
+[dependencies]
