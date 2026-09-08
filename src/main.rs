@@ -3,6 +3,7 @@ use serde::Serialize;
 use tokio::signal;
 
 mod config;
+mod models;
 
 use config::Config;
 
