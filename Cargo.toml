@@ -7,7 +7,7 @@ license = "Apache-2.0"
 repository = "https://github.com/Doki-Stack/mcp-scanner"
 
 [dependencies]
-doki-shared = { git = "https://github.com/Doki-Stack/shared-rust", branch = "main", features = ["sqlx-pg", "otel"] }
+doki-shared = { git = "https://github.com/Doki-Stack/shared-rust", branch = "main" }
 
 # Web framework
 axum = { version = "0.7", features = ["json"] }

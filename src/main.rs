@@ -2,6 +2,10 @@ use axum::{routing::get, Json, Router};
 use serde::Serialize;
 use tokio::signal;
 
+mod config;
+
+use config::Config;
+
 #[derive(Serialize)]
 struct HealthStatus {
     status: &'static str,
@@ -47,16 +51,13 @@ async fn shutdown_signal() {
 async fn main() -> anyhow::Result<()> {
     doki_shared::tracing::init_tracing("mcp-scanner")?;
 
-    let port: u16 = std::env::var("PORT")
-        .ok()
-        .and_then(|p| p.parse().ok())
-        .unwrap_or(3000);
+    let cfg = Config::from_env()?;
 
     let app = Router::new()
         .route("/healthz", get(healthz))
         .route("/readyz", get(readyz));
 
-    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], port));
+    let addr = std::net::SocketAddr::from(([0, 0, 0, 0], cfg.port));
     tracing::info!(%addr, "mcp-scanner listening");
 
     let listener = tokio::net::TcpListener::bind(addr).await?;
