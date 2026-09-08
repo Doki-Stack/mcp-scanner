@@ -4,6 +4,7 @@ use tokio::signal;
 
 mod config;
 mod models;
+mod services;
 
 use config::Config;
 

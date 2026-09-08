@@ -30,6 +30,8 @@ chrono = { version = "0.4", features = ["serde"] }
 # Logging / tracing
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+git2 = "0.21.0"
+tempfile = "3.27.0"
 
 [dev-dependencies]
 tower = { version = "0.4", features = ["util"] }
