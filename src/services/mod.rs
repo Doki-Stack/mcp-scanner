@@ -2,4 +2,5 @@
 // in B11. Remove once it does.
 #![allow(dead_code)]
 
+pub mod analyzer;
 pub mod cloner;

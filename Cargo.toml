@@ -32,6 +32,8 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
 git2 = "0.21.0"
 tempfile = "3.27.0"
+walkdir = "2.5.0"
+regex = "1.13.1"
 
 [dev-dependencies]
 tower = { version = "0.4", features = ["util"] }
